@@ -9,13 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Color(hex: "242A32")
+                .ignoresSafeArea()
+            
+            VStack(alignment: .leading) {
+                Text("What do you want to watch?")
+                    .poppinsBold(color: Color(hex: "FFFFFF")!, size: 18)
+                
+                SearchBarView()
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
