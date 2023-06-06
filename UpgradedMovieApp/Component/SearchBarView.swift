@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct SearchBarView: View {
+    @State var movieName: String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color(hex: "3A3F47")
+            
+            HStack {
+                TextField("", text: $movieName)
+                    .placeholder(when: movieName.isEmpty) {
+                        Text("Search")
+                            .poppinsRegular(color: Color(hex: "67686D")!, size: 14)
+                    }
+                
+                Image("Search")
+            }
+            .padding()
+        }
+        .frame(width: .infinity, height: 45)
+        .cornerRadius(10)
     }
 }
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
         SearchBarView()
+            .padding()
     }
 }
