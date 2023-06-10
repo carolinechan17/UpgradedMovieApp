@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var homeVM: HomeViewModel = HomeViewModel()
+    
     var body: some View {
         ZStack {
             Color(hex: "242A32")
@@ -20,6 +22,10 @@ struct HomeView: View {
                 SearchBarView()
             }
             .padding()
+            .task {
+                await homeVM.getTopMovies()
+                print($homeVM.$topMovies)
+            }
         }
     }
 }
