@@ -8,7 +8,7 @@
 import Foundation
 
 enum NetworkFactory {
-    case doLoginEmail(email: String, password: String)
+    case getTopMovies
 }
 
 extension NetworkFactory {
@@ -16,34 +16,31 @@ extension NetworkFactory {
     // MARK: URL PATH API
     var path: String {
         switch self {
-        case .doLoginEmail:
-            return ""
+        case .getTopMovies:
+            return "/en/API/MostPopularMovies/k_9p5boe6v"
         }
     }
     
     // MARK: URL QUERY PARAMS / URL PARAMS
     var queryItems: [URLQueryItem] {
         switch self {
-        case .doLoginEmail:
+        default:
             return []
         }
     }
     
     var bodyParam: [String: Any]? {
         switch self {
-        case .doLoginEmail(let email, let password):
-            return [
-                "email": email,
-                "password": password
-            ]
+        default:
+            return nil
         }
     }
     
     // MARK: BASE URL API
     var baseApi: String? {
         switch self {
-        case .doLoginEmail:
-            return ""
+        default:
+            return "imdb-api.com"
         }
     }
     
@@ -64,8 +61,8 @@ extension NetworkFactory {
     // MARK: HTTP METHOD
     var method: RequestMethod {
         switch self {
-        case .doLoginEmail:
-            return .post
+        case .getTopMovies:
+            return .get
         }
     }
     
@@ -86,16 +83,16 @@ extension NetworkFactory {
     // MARK: MULTIPART DATA
     var data: Data? {
         switch self {
-        case .doLoginEmail:
-            return Data()
+        default:
+            return nil
         }
     }
     
     // MARK: HEADER API
     var headers: [String: String]? {
         switch self {
-        case .doLoginEmail:
-            return getHeaders(type: .authorized)
+        default:
+            return nil
         }
     }
     
