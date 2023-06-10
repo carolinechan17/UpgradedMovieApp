@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isActive: Bool = false
     var body: some View {
         ZStack {
-            Color(hex: "242A32")
-                .ignoresSafeArea()
-            
-            VStack(alignment: .leading) {
-                Text("What do you want to watch?")
-                    .poppinsBold(color: Color(hex: "FFFFFF")!, size: 18)
-                
-                SearchBarView()
+            if self.isActive {
+                HomeView()
+            } else {
+                SplashScreenView()
             }
-            .padding()
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                withAnimation {
+                    self.isActive = true
+                }
+            }
         }
     }
 }
