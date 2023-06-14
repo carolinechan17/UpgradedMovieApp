@@ -17,7 +17,8 @@ struct SearchBarView: View {
                 TextField("", text: $movieName)
                     .placeholder(when: movieName.isEmpty) {
                         Text("Search")
-                            .poppinsRegular(color: Color(hex: "67686D")!, size: 14)
+                            .foregroundColor(Color(hex: "67686D"))
+                            .font(.system(size: 14))
                     }
                 
                 Image("Search")

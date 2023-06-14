@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TopMovieModel: Codable {
+struct TopMovieModel: Codable, Hashable {
     let items: [TopMovieElement]
     let errorMessage: String
 
@@ -17,7 +17,7 @@ struct TopMovieModel: Codable {
     }
 }
 
-struct TopMovieElement: Codable {
+struct TopMovieElement: Codable, Hashable {
     let id, rank, rankUpDown, title: String
     let fullTitle, year: String
     let image: String

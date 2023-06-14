@@ -15,7 +15,9 @@ struct SearchView: View {
             
             VStack(alignment: .leading) {
                 Text("What do you want to watch?")
-                    .poppinsBold(color: Color(hex: "FFFFFF")!, size: 18)
+                    .font(.system(size: 18))
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
                 
                 SearchBarView()
             }

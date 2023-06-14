@@ -17,14 +17,20 @@ struct HomeView: View {
             
             VStack(alignment: .leading) {
                 Text("What do you want to watch?")
-                    .poppinsBold(color: Color(hex: "FFFFFF")!, size: 18)
+                    .font(.system(size: 18))
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
                 
                 SearchBarView()
+                
+                topMoviesSection
+                
+                Spacer()
             }
             .padding()
             .task {
                 await homeVM.getTopMovies()
-                print($homeVM.$topMovies)
+                print(homeVM.topMovies)
             }
         }
     }
@@ -33,5 +39,38 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+extension HomeView {
+    @ViewBuilder
+    private var topMoviesSection: some View {
+        Text("Top 10 Movies")
+            .font(.system(size: 18))
+            .fontWeight(.semibold)
+            .foregroundColor(.white)
+            .padding(.top)
+        
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(homeVM.topMovies.items.prefix(10), id: \.self) { item in
+                    ZStack {
+                        ProgressView()
+                        
+                        AsyncImage(url: URL(string: item.image)) { image in
+                            image
+                                .resizable()
+                                .frame(width: 150, height: 200)
+                                .scaledToFit()
+                        } placeholder: {
+                            Color.clear
+                        }
+                    }
+                    .frame(width: 150, height: 200)
+                    .cornerRadius(10)
+                }
+            }
+            .padding(.bottom)
+        }
     }
 }
