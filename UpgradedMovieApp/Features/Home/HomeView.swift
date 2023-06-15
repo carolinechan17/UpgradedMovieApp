@@ -15,24 +15,26 @@ struct HomeView: View {
             Color(hex: "242A32")
                 .ignoresSafeArea()
             
-            VStack(alignment: .leading) {
-                Text("What do you want to watch?")
-                    .font(.system(size: 18))
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                
-                SearchBarView()
-                
-                topMoviesSection
-                
-                topTVShowsSection
-                
-                Spacer()
-            }
-            .padding()
-            .task {
-                await homeVM.getTopMovies()
-                await homeVM.getTopTVShows()
+            ScrollView(showsIndicators: false) {
+                VStack(alignment: .leading) {
+                    Text("What do you want to watch?")
+                        .font(.system(size: 18))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                    
+                    SearchBarView()
+                    
+                    topMoviesSection
+                    
+                    topTVShowsSection
+                    
+                    Spacer()
+                }
+                .padding()
+                .task {
+                    await homeVM.getTopMovies()
+                    await homeVM.getTopTVShows()
+                }
             }
         }
     }
