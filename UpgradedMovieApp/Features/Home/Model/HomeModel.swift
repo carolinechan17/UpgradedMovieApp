@@ -30,7 +30,7 @@ struct TopMovieElement: Codable, Hashable {
     }
 }
 
-struct TopTVShowsModel: Codable {
+struct TopTVShowsModel: Codable, Hashable {
     let items: [TopTVShowsElement]
     let errorMessage: String
     
@@ -41,7 +41,7 @@ struct TopTVShowsModel: Codable {
 }
 
 // MARK: - Item
-struct TopTVShowsElement: Codable {
+struct TopTVShowsElement: Codable, Hashable {
     let id, rank, title, fullTitle: String
     let year: String
     let image: String

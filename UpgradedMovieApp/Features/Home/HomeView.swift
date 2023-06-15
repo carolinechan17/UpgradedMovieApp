@@ -25,6 +25,8 @@ struct HomeView: View {
                 
                 topMoviesSection
                 
+                topTVShowsSection
+                
                 Spacer()
             }
             .padding()
@@ -54,6 +56,39 @@ extension HomeView {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(homeVM.topMovies.items.prefix(10), id: \.self) { item in
+                    ZStack {
+                        ProgressView()
+                        
+                        AsyncImage(url: URL(string: item.image)) { image in
+                            image
+                                .resizable()
+                                .frame(width: 150, height: 200)
+                                .scaledToFit()
+                        } placeholder: {
+                            Color.clear
+                        }
+                    }
+                    .frame(width: 150, height: 200)
+                    .cornerRadius(10)
+                }
+            }
+            .padding(.bottom)
+        }
+    }
+}
+
+extension HomeView {
+    @ViewBuilder
+    private var topTVShowsSection: some View {
+        Text("Top 10 TV Shows")
+            .font(.system(size: 18))
+            .fontWeight(.semibold)
+            .foregroundColor(.white)
+            .padding(.top)
+        
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(homeVM.topTVShows.items.prefix(10), id: \.self) { item in
                     ZStack {
                         ProgressView()
                         
