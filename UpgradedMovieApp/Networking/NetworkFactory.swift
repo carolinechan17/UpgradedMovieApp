@@ -9,6 +9,7 @@ import Foundation
 
 enum NetworkFactory {
     case getTopMovies
+    case getTopTVShows
 }
 
 extension NetworkFactory {
@@ -18,6 +19,8 @@ extension NetworkFactory {
         switch self {
         case .getTopMovies:
             return "/en/API/MostPopularMovies/k_9p5boe6v"
+        case .getTopTVShows:
+            return "/en/API/Top250TVs/k_9p5boe6v"
         }
     }
     
@@ -62,6 +65,8 @@ extension NetworkFactory {
     var method: RequestMethod {
         switch self {
         case .getTopMovies:
+            return .get
+        case .getTopTVShows:
             return .get
         }
     }

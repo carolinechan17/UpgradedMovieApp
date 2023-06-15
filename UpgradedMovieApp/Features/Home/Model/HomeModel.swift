@@ -29,3 +29,27 @@ struct TopMovieElement: Codable, Hashable {
         case imDBRatingCount = "imDbRatingCount"
     }
 }
+
+struct TopTVShowsModel: Codable {
+    let items: [TopTVShowsElement]
+    let errorMessage: String
+    
+    init(items: [TopTVShowsElement] = [], errorMessage: String = "") {
+        self.items = items
+        self.errorMessage = errorMessage
+    }
+}
+
+// MARK: - Item
+struct TopTVShowsElement: Codable {
+    let id, rank, title, fullTitle: String
+    let year: String
+    let image: String
+    let crew, imDBRating, imDBRatingCount: String
+
+    enum CodingKeys: String, CodingKey {
+        case id, rank, title, fullTitle, year, image, crew
+        case imDBRating = "imDbRating"
+        case imDBRatingCount = "imDbRatingCount"
+    }
+}

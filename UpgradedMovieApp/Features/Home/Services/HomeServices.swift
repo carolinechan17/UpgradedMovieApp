@@ -10,6 +10,7 @@ import Foundation
 protocol HomeServicesProtocol: AnyObject {
     var networker: NetworkerProtocol { get }
     func getTopMovies(endPoint: NetworkFactory) async throws -> TopMovieModel
+    func getTopTVShows(endPoint: NetworkFactory) async throws -> TopTVShowsModel
 }
 
 final class HomeServices: HomeServicesProtocol {
@@ -21,5 +22,9 @@ final class HomeServices: HomeServicesProtocol {
     
     func getTopMovies(endPoint: NetworkFactory) async throws -> TopMovieModel {
         return try await networker.taskAsync(type: TopMovieModel.self, endPoint: endPoint, isMultipart: false)
+    }
+    
+    func getTopTVShows(endPoint: NetworkFactory) async throws -> TopTVShowsModel {
+        return try await networker.taskAsync(type: TopTVShowsModel.self, endPoint: endPoint, isMultipart: false)
     }
 }

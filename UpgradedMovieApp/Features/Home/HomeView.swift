@@ -30,7 +30,7 @@ struct HomeView: View {
             .padding()
             .task {
                 await homeVM.getTopMovies()
-                print(homeVM.topMovies)
+                await homeVM.getTopTVShows()
             }
         }
     }
