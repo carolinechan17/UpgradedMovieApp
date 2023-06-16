@@ -26,6 +26,7 @@
 		E6F7C5E82A34721C003F4CEA /* HomeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5E72A34721C003F4CEA /* HomeServices.swift */; };
 		E6F7C5EB2A347490003F4CEA /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5EA2A347490003F4CEA /* HomeModel.swift */; };
 		E6F7C5ED2A3477B3003F4CEA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5EC2A3477B3003F4CEA /* HomeViewModel.swift */; };
+		E6FE749A2A3CA17C005FAB16 /* ScrollableTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE74992A3CA17C005FAB16 /* ScrollableTabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		E6F7C5E72A34721C003F4CEA /* HomeServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServices.swift; sourceTree = "<group>"; };
 		E6F7C5EA2A347490003F4CEA /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		E6F7C5EC2A3477B3003F4CEA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E6FE74992A3CA17C005FAB16 /* ScrollableTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				E6F7C5D72A2E20A5003F4CEA /* SearchBarView.swift */,
+				E6FE74992A3CA17C005FAB16 /* ScrollableTabBarView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6FE749A2A3CA17C005FAB16 /* ScrollableTabBarView.swift in Sources */,
 				E6F7C5ED2A3477B3003F4CEA /* HomeViewModel.swift in Sources */,
 				E62A61CC2A2B6D9F002B2583 /* Data.swift in Sources */,
 				E62A61AF2A2B69C0002B2583 /* ContentView.swift in Sources */,
