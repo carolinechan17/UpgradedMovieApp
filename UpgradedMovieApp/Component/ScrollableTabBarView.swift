@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScrollableTabBarView: View {
     var items: [String]
-    @State var selectedIndex = 0
+    @Binding var selectedIndex: Int
     
     var body: some View {
         ScrollViewReader { scrollView in
@@ -40,7 +40,7 @@ struct ScrollableTabBarView: View {
     
     struct ScrollableTabBarView_Previews: PreviewProvider {
         static var previews: some View {
-            ScrollableTabBarView(items: ["Now Playing", "Coming Soon", "Box Office", "Box Office All Time"])
+            ScrollableTabBarView(items: ["Now Playing", "Coming Soon", "Box Office", "Box Office All Time"], selectedIndex: .constant(1))
         }
     }
 }

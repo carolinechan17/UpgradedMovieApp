@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var homeVM: HomeViewModel = HomeViewModel()
+    @State var selectedIndex: Int = 0
     
     var body: some View {
         ZStack {
@@ -24,7 +25,7 @@ struct HomeView: View {
                     
                     SearchBarView()
                     
-                    ScrollableTabBarView(items: ["Top Movies", "Top TV Shows", "Popular Movies", "Popular TV Shows", "Now Playing", "Coming Soon", "Box Office", "Box Office All Time"])
+                    ScrollableTabBarView(items: ["Top Movies", "Top TV Shows", "Popular Movies", "Popular TV Shows", "Now Playing", "Coming Soon", "Box Office", "Box Office All Time"], selectedIndex: $selectedIndex)
                         .padding(.vertical)
                     
                     Spacer()
