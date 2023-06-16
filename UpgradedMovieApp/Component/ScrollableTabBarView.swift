@@ -34,7 +34,7 @@ struct ScrollableTabBarView: View {
             }
             .padding()
             .background(Color(hex: "3A3F47")!)
-            .cornerRadius(25)
+            .cornerRadius(15)
         }
     }
     
