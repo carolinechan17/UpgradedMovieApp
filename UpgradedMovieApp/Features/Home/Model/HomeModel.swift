@@ -40,8 +40,30 @@ struct TopTVShowsModel: Codable, Hashable {
     }
 }
 
-// MARK: - Item
 struct TopTVShowsElement: Codable, Hashable {
+    let id, rank, title, fullTitle: String
+    let year: String
+    let image: String
+    let crew, imDBRating, imDBRatingCount: String
+
+    enum CodingKeys: String, CodingKey {
+        case id, rank, title, fullTitle, year, image, crew
+        case imDBRating = "imDbRating"
+        case imDBRatingCount = "imDbRatingCount"
+    }
+}
+
+struct PopularMoviesModel: Codable, Hashable {
+    let items: [PopularMoviesElement]
+    let errorMessage: String
+    
+    init(items: [PopularMoviesElement] = [], errorMessage: String = "") {
+        self.items = items
+        self.errorMessage = errorMessage
+    }
+}
+
+struct PopularMoviesElement: Codable, Hashable {
     let id, rank, title, fullTitle: String
     let year: String
     let image: String
