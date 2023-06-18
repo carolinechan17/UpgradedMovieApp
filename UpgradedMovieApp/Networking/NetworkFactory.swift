@@ -12,6 +12,7 @@ enum NetworkFactory {
     case getTopTVShows
     case getPopularMovies
     case getPopularTVShows
+    case getInTheaters
 }
 
 extension NetworkFactory {
@@ -27,6 +28,8 @@ extension NetworkFactory {
             return "/en/API/MostPopularMovies/k_9p5boe6v"
         case .getPopularTVShows:
             return "/en/API/MostPopularTVs/k_9p5boe6v"
+        case .getInTheaters:
+            return "/en/API/InTheaters/k_9p5boe6v"
         }
     }
     
@@ -77,6 +80,8 @@ extension NetworkFactory {
         case .getPopularMovies:
             return .get
         case .getPopularTVShows:
+            return .get
+        case .getInTheaters:
             return .get
         }
     }
