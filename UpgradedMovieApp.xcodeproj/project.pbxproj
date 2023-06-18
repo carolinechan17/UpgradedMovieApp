@@ -27,6 +27,7 @@
 		E6F7C5EB2A347490003F4CEA /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5EA2A347490003F4CEA /* HomeModel.swift */; };
 		E6F7C5ED2A3477B3003F4CEA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5EC2A3477B3003F4CEA /* HomeViewModel.swift */; };
 		E6FE749A2A3CA17C005FAB16 /* ScrollableTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE74992A3CA17C005FAB16 /* ScrollableTabBarView.swift */; };
+		E6FE749D2A3D8E26005FAB16 /* TopMoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE749C2A3D8E26005FAB16 /* TopMoviesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		E6F7C5EA2A347490003F4CEA /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		E6F7C5EC2A3477B3003F4CEA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E6FE74992A3CA17C005FAB16 /* ScrollableTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBarView.swift; sourceTree = "<group>"; };
+		E6FE749C2A3D8E26005FAB16 /* TopMoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 		E6F7C5DD2A3463E4003F4CEA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E6FE749B2A3D8E13005FAB16 /* TabViews */,
 				E6F7C5E92A3473BE003F4CEA /* Model */,
 				E6F7C5E42A3471F9003F4CEA /* Services */,
 				E6F7C5E02A346405003F4CEA /* HomeView.swift */,
@@ -192,6 +195,14 @@
 				E6F7C5EA2A347490003F4CEA /* HomeModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E6FE749B2A3D8E13005FAB16 /* TabViews */ = {
+			isa = PBXGroup;
+			children = (
+				E6FE749C2A3D8E26005FAB16 /* TopMoviesView.swift */,
+			);
+			path = TabViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +290,7 @@
 				E6F7C5EB2A347490003F4CEA /* HomeModel.swift in Sources */,
 				E62A61C22A2B6AF0002B2583 /* NetworkFactory.swift in Sources */,
 				E62A61AD2A2B69C0002B2583 /* UpgradedMovieAppApp.swift in Sources */,
+				E6FE749D2A3D8E26005FAB16 /* TopMoviesView.swift in Sources */,
 				E62A61BD2A2B6A2F002B2583 /* Networker.swift in Sources */,
 				E62A61C42A2B6BE1002B2583 /* NetworkError.swift in Sources */,
 				E6F7C5D82A2E20A5003F4CEA /* SearchBarView.swift in Sources */,
