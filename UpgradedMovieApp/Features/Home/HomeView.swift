@@ -34,7 +34,7 @@ struct HomeView: View {
                     TopTVShowsView()
                         .tag(1)
                     
-                    TopMoviesView()
+                    PopularMoviesView()
                         .tag(2)
                 }
                 .onAppear {
