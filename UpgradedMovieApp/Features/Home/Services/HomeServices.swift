@@ -14,6 +14,7 @@ protocol HomeServicesProtocol: AnyObject {
     func getPopularMovies(endPoint: NetworkFactory) async throws -> PopularMoviesModel
     func getPopularTVShows(endPoint: NetworkFactory) async throws -> PopularTVShowsModel
     func getInTheaters(endPoint: NetworkFactory) async throws -> InTheaterModel
+    func getComingSoon(endPoint: NetworkFactory) async throws -> ComingSoonModel
 }
 
 final class HomeServices: HomeServicesProtocol {
@@ -41,5 +42,9 @@ final class HomeServices: HomeServicesProtocol {
     
     func getInTheaters(endPoint: NetworkFactory) async throws -> InTheaterModel {
         return try await networker.taskAsync(type: InTheaterModel.self, endPoint: endPoint, isMultipart: false)
+    }
+    
+    func getComingSoon(endPoint: NetworkFactory) async throws -> ComingSoonModel {
+        return try await networker.taskAsync(type: ComingSoonModel.self, endPoint: endPoint, isMultipart: false)
     }
 }

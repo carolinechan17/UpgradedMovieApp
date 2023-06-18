@@ -15,6 +15,7 @@ class HomeViewModel: ObservableObject {
     @Published var popularMovies: PopularMoviesModel = PopularMoviesModel()
     @Published var popularTVShows: PopularTVShowsModel = PopularTVShowsModel()
     @Published var inTheaters: InTheaterModel = InTheaterModel()
+    @Published var comingSoon: ComingSoonModel = ComingSoonModel()
     
     private var homeServices: HomeServicesProtocol
     
@@ -45,5 +46,10 @@ class HomeViewModel: ObservableObject {
     func getInTheaters() async {
         guard let data = try? await homeServices.getInTheaters(endPoint: .getInTheaters) else { return }
         inTheaters = data
+    }
+    
+    func getComingSoon() async {
+        guard let data = try? await homeServices.getComingSoon(endPoint: .getComingSoon) else { return }
+        comingSoon = data
     }
 }

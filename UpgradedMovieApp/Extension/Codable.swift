@@ -53,7 +53,6 @@ class JSONCodingKey: CodingKey {
 }
 
 class JSONAny: Codable {
-
     let value: Any
 
     static func decodingError(forCodingPath codingPath: [CodingKey]) -> DecodingError {

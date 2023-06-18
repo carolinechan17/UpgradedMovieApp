@@ -42,9 +42,13 @@ struct HomeView: View {
                     
                     InTheatersView()
                         .tag(4)
+                    
+                    ComingSoonView()
+                        .tag(5)
                 }
                 .onAppear {
                     UITabBar.appearance().isHidden = true
+                    UINavigationBar.appearance().isHidden = true
                 }
                 
                 Spacer()
