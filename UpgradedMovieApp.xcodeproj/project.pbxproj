@@ -17,6 +17,7 @@
 		E62A61C42A2B6BE1002B2583 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A61C32A2B6BE1002B2583 /* NetworkError.swift */; };
 		E62A61CA2A2B6D7A002B2583 /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A61C92A2B6D7A002B2583 /* ConfigManager.swift */; };
 		E62A61CC2A2B6D9F002B2583 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A61CB2A2B6D9F002B2583 /* Data.swift */; };
+		E62B62EE2A3EBDC4008A5BD4 /* TopTVShowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B62ED2A3EBDC4008A5BD4 /* TopTVShowsView.swift */; };
 		E6F7C5D22A2E1D65003F4CEA /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5D12A2E1D65003F4CEA /* SplashScreenView.swift */; };
 		E6F7C5D42A2E1DBE003F4CEA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5D32A2E1DBE003F4CEA /* Color.swift */; };
 		E6F7C5D82A2E20A5003F4CEA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5D72A2E20A5003F4CEA /* SearchBarView.swift */; };
@@ -41,6 +42,7 @@
 		E62A61C32A2B6BE1002B2583 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E62A61C92A2B6D7A002B2583 /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
 		E62A61CB2A2B6D9F002B2583 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E62B62ED2A3EBDC4008A5BD4 /* TopTVShowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTVShowsView.swift; sourceTree = "<group>"; };
 		E6F7C5D12A2E1D65003F4CEA /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		E6F7C5D32A2E1DBE003F4CEA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E6F7C5D72A2E20A5003F4CEA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				E6FE749C2A3D8E26005FAB16 /* TopMoviesView.swift */,
+				E62B62ED2A3EBDC4008A5BD4 /* TopTVShowsView.swift */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FE749A2A3CA17C005FAB16 /* ScrollableTabBarView.swift in Sources */,
+				E62B62EE2A3EBDC4008A5BD4 /* TopTVShowsView.swift in Sources */,
 				E6F7C5ED2A3477B3003F4CEA /* HomeViewModel.swift in Sources */,
 				E62A61CC2A2B6D9F002B2583 /* Data.swift in Sources */,
 				E62A61AF2A2B69C0002B2583 /* ContentView.swift in Sources */,
