@@ -20,6 +20,7 @@
 		E62B62EE2A3EBDC4008A5BD4 /* TopTVShowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B62ED2A3EBDC4008A5BD4 /* TopTVShowsView.swift */; };
 		E62B62F02A3EC03E008A5BD4 /* PopularMoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B62EF2A3EC03E008A5BD4 /* PopularMoviesView.swift */; };
 		E62B62F22A3EC3FA008A5BD4 /* PopularTVShowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B62F12A3EC3F9008A5BD4 /* PopularTVShowsView.swift */; };
+		E62B62F42A3ED357008A5BD4 /* InTheatersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B62F32A3ED357008A5BD4 /* InTheatersView.swift */; };
 		E6F7C5D22A2E1D65003F4CEA /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5D12A2E1D65003F4CEA /* SplashScreenView.swift */; };
 		E6F7C5D42A2E1DBE003F4CEA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5D32A2E1DBE003F4CEA /* Color.swift */; };
 		E6F7C5D82A2E20A5003F4CEA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5D72A2E20A5003F4CEA /* SearchBarView.swift */; };
@@ -47,6 +48,7 @@
 		E62B62ED2A3EBDC4008A5BD4 /* TopTVShowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTVShowsView.swift; sourceTree = "<group>"; };
 		E62B62EF2A3EC03E008A5BD4 /* PopularMoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesView.swift; sourceTree = "<group>"; };
 		E62B62F12A3EC3F9008A5BD4 /* PopularTVShowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTVShowsView.swift; sourceTree = "<group>"; };
+		E62B62F32A3ED357008A5BD4 /* InTheatersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTheatersView.swift; sourceTree = "<group>"; };
 		E6F7C5D12A2E1D65003F4CEA /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		E6F7C5D32A2E1DBE003F4CEA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E6F7C5D72A2E20A5003F4CEA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				E62B62ED2A3EBDC4008A5BD4 /* TopTVShowsView.swift */,
 				E62B62EF2A3EC03E008A5BD4 /* PopularMoviesView.swift */,
 				E62B62F12A3EC3F9008A5BD4 /* PopularTVShowsView.swift */,
+				E62B62F32A3ED357008A5BD4 /* InTheatersView.swift */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				E6FE749A2A3CA17C005FAB16 /* ScrollableTabBarView.swift in Sources */,
 				E62B62EE2A3EBDC4008A5BD4 /* TopTVShowsView.swift in Sources */,
 				E6F7C5ED2A3477B3003F4CEA /* HomeViewModel.swift in Sources */,
+				E62B62F42A3ED357008A5BD4 /* InTheatersView.swift in Sources */,
 				E62A61CC2A2B6D9F002B2583 /* Data.swift in Sources */,
 				E62A61AF2A2B69C0002B2583 /* ContentView.swift in Sources */,
 				E6F7C5E12A346405003F4CEA /* HomeView.swift in Sources */,
