@@ -29,6 +29,8 @@
 		E62B63062A3EF7BC008A5BD4 /* InTheaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B63052A3EF7BC008A5BD4 /* InTheaterModel.swift */; };
 		E62B63082A3EF7E2008A5BD4 /* ComingSoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B63072A3EF7E2008A5BD4 /* ComingSoonModel.swift */; };
 		E62B630A2A3EF9DF008A5BD4 /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B63092A3EF9DF008A5BD4 /* ComingSoonView.swift */; };
+		E62B63102A3F03F6008A5BD4 /* BoxOfficeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B630F2A3F03F6008A5BD4 /* BoxOfficeModel.swift */; };
+		E62B63122A3F0499008A5BD4 /* BoxOfficeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B63112A3F0499008A5BD4 /* BoxOfficeView.swift */; };
 		E6F7C5D22A2E1D65003F4CEA /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5D12A2E1D65003F4CEA /* SplashScreenView.swift */; };
 		E6F7C5D42A2E1DBE003F4CEA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5D32A2E1DBE003F4CEA /* Color.swift */; };
 		E6F7C5D82A2E20A5003F4CEA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7C5D72A2E20A5003F4CEA /* SearchBarView.swift */; };
@@ -64,6 +66,8 @@
 		E62B63052A3EF7BC008A5BD4 /* InTheaterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTheaterModel.swift; sourceTree = "<group>"; };
 		E62B63072A3EF7E2008A5BD4 /* ComingSoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonModel.swift; sourceTree = "<group>"; };
 		E62B63092A3EF9DF008A5BD4 /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
+		E62B630F2A3F03F6008A5BD4 /* BoxOfficeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeModel.swift; sourceTree = "<group>"; };
+		E62B63112A3F0499008A5BD4 /* BoxOfficeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeView.swift; sourceTree = "<group>"; };
 		E6F7C5D12A2E1D65003F4CEA /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		E6F7C5D32A2E1DBE003F4CEA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E6F7C5D72A2E20A5003F4CEA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				E62B63032A3EF79D008A5BD4 /* PopularTVShowsModel.swift */,
 				E62B63052A3EF7BC008A5BD4 /* InTheaterModel.swift */,
 				E62B63072A3EF7E2008A5BD4 /* ComingSoonModel.swift */,
+				E62B630F2A3F03F6008A5BD4 /* BoxOfficeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				E62B62F12A3EC3F9008A5BD4 /* PopularTVShowsView.swift */,
 				E62B62F32A3ED357008A5BD4 /* InTheatersView.swift */,
 				E62B63092A3EF9DF008A5BD4 /* ComingSoonView.swift */,
+				E62B63112A3F0499008A5BD4 /* BoxOfficeView.swift */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 				E6FE749A2A3CA17C005FAB16 /* ScrollableTabBarView.swift in Sources */,
 				E62B630A2A3EF9DF008A5BD4 /* ComingSoonView.swift in Sources */,
 				E62B62EE2A3EBDC4008A5BD4 /* TopTVShowsView.swift in Sources */,
+				E62B63102A3F03F6008A5BD4 /* BoxOfficeModel.swift in Sources */,
 				E6F7C5ED2A3477B3003F4CEA /* HomeViewModel.swift in Sources */,
 				E62B62F42A3ED357008A5BD4 /* InTheatersView.swift in Sources */,
 				E62B63002A3EF760008A5BD4 /* TopTVShowsModel.swift in Sources */,
@@ -328,6 +335,7 @@
 				E62B62F02A3EC03E008A5BD4 /* PopularMoviesView.swift in Sources */,
 				E62B62FE2A3EF744008A5BD4 /* TopMovieModel.swift in Sources */,
 				E62B63062A3EF7BC008A5BD4 /* InTheaterModel.swift in Sources */,
+				E62B63122A3F0499008A5BD4 /* BoxOfficeView.swift in Sources */,
 				E62A61C22A2B6AF0002B2583 /* NetworkFactory.swift in Sources */,
 				E62A61AD2A2B69C0002B2583 /* UpgradedMovieAppApp.swift in Sources */,
 				E62B62F22A3EC3FA008A5BD4 /* PopularTVShowsView.swift in Sources */,

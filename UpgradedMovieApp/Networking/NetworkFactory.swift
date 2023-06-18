@@ -14,6 +14,7 @@ enum NetworkFactory {
     case getPopularTVShows
     case getInTheaters
     case getComingSoon
+    case getBoxOffice
 }
 
 extension NetworkFactory {
@@ -33,6 +34,8 @@ extension NetworkFactory {
             return "/en/API/InTheaters/k_9p5boe6v"
         case .getComingSoon:
             return "/en/API/ComingSoon/k_9p5boe6v"
+        case .getBoxOffice:
+            return "/en/API/BoxOffice/k_9p5boe6v"
         }
     }
     
@@ -87,6 +90,8 @@ extension NetworkFactory {
         case .getInTheaters:
             return .get
         case .getComingSoon:
+            return .get
+        case .getBoxOffice:
             return .get
         }
     }
