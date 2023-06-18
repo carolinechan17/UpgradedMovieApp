@@ -10,7 +10,7 @@ import Foundation
 struct TopMovieModel: Codable, Hashable {
     let items: [TopMovieElement]
     let errorMessage: String
-
+    
     init(items: [TopMovieElement] = [], errorMessage: String = "") {
         self.items = items
         self.errorMessage = errorMessage
@@ -22,7 +22,7 @@ struct TopMovieElement: Codable, Hashable {
     let fullTitle, year: String
     let image: String
     let crew, imDBRating, imDBRatingCount: String
-
+    
     enum CodingKeys: String, CodingKey {
         case id, rank, rankUpDown, title, fullTitle, year, image, crew
         case imDBRating = "imDbRating"
@@ -45,7 +45,7 @@ struct TopTVShowsElement: Codable, Hashable {
     let year: String
     let image: String
     let crew, imDBRating, imDBRatingCount: String
-
+    
     enum CodingKeys: String, CodingKey {
         case id, rank, title, fullTitle, year, image, crew
         case imDBRating = "imDbRating"
@@ -68,7 +68,7 @@ struct PopularMoviesElement: Codable, Hashable {
     let year: String
     let image: String
     let crew, imDBRating, imDBRatingCount: String
-
+    
     enum CodingKeys: String, CodingKey {
         case id, rank, title, fullTitle, year, image, crew
         case imDBRating = "imDbRating"
@@ -91,7 +91,7 @@ struct PopularTVShowsElement: Codable, Hashable {
     let year: String
     let image: String
     let crew, imDBRating, imDBRatingCount: String
-
+    
     enum CodingKeys: String, CodingKey {
         case id, rank, title, fullTitle, year, image, crew
         case imDBRating = "imDbRating"
@@ -99,3 +99,40 @@ struct PopularTVShowsElement: Codable, Hashable {
     }
 }
 
+struct InTheaterModel: Codable, Hashable {
+    let items: [InTheaterElement]
+    let errorMessage: String
+    
+    init(items: [InTheaterElement] = [], errorMessage: String = "") {
+        self.items = items
+        self.errorMessage = errorMessage
+    }
+}
+
+struct InTheaterElement: Codable, Hashable {
+    let id, title, fullTitle, year: String
+    let releaseState: String
+    let image: String
+    let runtimeMins, runtimeStr, plot, contentRating: String
+    let imDBRating, imDBRatingCount, metacriticRating, genres: String
+    let genreList: [GenreList]
+    let directors: String
+    let directorList: [RList]
+    let stars: String
+    let starList: [RList]
+    
+    enum CodingKeys: String, CodingKey {
+        case id, title, fullTitle, year, releaseState, image, runtimeMins, runtimeStr, plot, contentRating
+        case imDBRating = "imDbRating"
+        case imDBRatingCount = "imDbRatingCount"
+        case metacriticRating, genres, genreList, directors, directorList, stars, starList
+    }
+}
+
+struct RList: Codable, Hashable {
+    let id, name: String
+}
+
+struct GenreList: Codable, Hashable {
+    let key, value: String
+}
