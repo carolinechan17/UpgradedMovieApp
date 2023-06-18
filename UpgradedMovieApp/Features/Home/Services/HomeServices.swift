@@ -13,6 +13,7 @@ protocol HomeServicesProtocol: AnyObject {
     func getTopTVShows(endPoint: NetworkFactory) async throws -> TopTVShowsModel
     func getPopularMovies(endPoint: NetworkFactory) async throws -> PopularMoviesModel
     func getPopularTVShows(endPoint: NetworkFactory) async throws -> PopularTVShowsModel
+    func getInTheaters(endPoint: NetworkFactory) async throws -> InTheaterModel
 }
 
 final class HomeServices: HomeServicesProtocol {
@@ -36,5 +37,9 @@ final class HomeServices: HomeServicesProtocol {
     
     func getPopularTVShows(endPoint: NetworkFactory) async throws -> PopularTVShowsModel {
         return try await networker.taskAsync(type: PopularTVShowsModel.self, endPoint: endPoint, isMultipart: false)
+    }
+    
+    func getInTheaters(endPoint: NetworkFactory) async throws -> InTheaterModel {
+        return try await networker.taskAsync(type: InTheaterModel.self, endPoint: endPoint, isMultipart: false)
     }
 }
