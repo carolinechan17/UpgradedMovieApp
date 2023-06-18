@@ -45,6 +45,9 @@ struct HomeView: View {
                     
                     ComingSoonView()
                         .tag(5)
+                    
+                    BoxOfficeView()
+                        .tag(6)
                 }
                 .onAppear {
                     UITabBar.appearance().isHidden = true
