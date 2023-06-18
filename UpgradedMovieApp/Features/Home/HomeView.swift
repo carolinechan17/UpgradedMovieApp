@@ -36,6 +36,9 @@ struct HomeView: View {
                     
                     PopularMoviesView()
                         .tag(2)
+                    
+                    PopularTVShowsView()
+                        .tag(3)
                 }
                 .onAppear {
                     UITabBar.appearance().isHidden = true
