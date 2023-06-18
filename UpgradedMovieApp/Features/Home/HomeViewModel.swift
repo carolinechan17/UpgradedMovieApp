@@ -12,6 +12,7 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
     @Published var topMovies: TopMovieModel = TopMovieModel()
     @Published var topTVShows: TopTVShowsModel = TopTVShowsModel()
+    @Published var popularMovies: PopularMoviesModel = PopularMoviesModel()
     
     private var homeServices: HomeServicesProtocol
     
@@ -27,5 +28,10 @@ class HomeViewModel: ObservableObject {
     func getTopTVShows() async {
         guard let data = try? await homeServices.getTopTVShows(endPoint: .getTopTVShows) else { return }
         topTVShows = data
+    }
+    
+    func getPopularMovies() async {
+        guard let data = try? await homeServices.getPopularMovies(endPoint: .getPopularMovies) else { return }
+        popularMovies = data
     }
 }
