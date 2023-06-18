@@ -24,7 +24,7 @@ struct HomeView: View {
                 
                 SearchBarView()
                 
-                ScrollableTabBarView(items: ["Top Movies", "Top TV Shows", "Popular Movies", "Popular TV Shows", "Now Playing", "Coming Soon", "Box Office", "Box Office All Time"], selectedIndex: $selectedIndex)
+                ScrollableTabBarView(items: ["Top Movies", "Top TV Shows", "Popular Movies", "Popular TV Shows", "Now Playing", "Coming Soon", "Box Office"], selectedIndex: $selectedIndex)
                     .padding(.top)
                 
                 TabView(selection: $selectedIndex) {
