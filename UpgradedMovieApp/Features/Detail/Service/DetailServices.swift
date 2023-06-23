@@ -9,7 +9,7 @@ import Foundation
 
 protocol DetailServicesProtocol: AnyObject {
     var networker: NetworkerProtocol { get }
-    func getDetail(id: String, endPoint: NetworkFactory) async throws -> DetailModel
+    func getDetail(endPoint: NetworkFactory) async throws -> DetailModel
 }
 
 final class DetailServices: DetailServicesProtocol {
@@ -19,7 +19,7 @@ final class DetailServices: DetailServicesProtocol {
         self.networker = networker
     }
     
-    func getDetail(id: String, endPoint: NetworkFactory) async throws -> DetailModel {
+    func getDetail(endPoint: NetworkFactory) async throws -> DetailModel {
         return try await networker.taskAsync(type: DetailModel.self, endPoint: endPoint, isMultipart: false)
     }
 }
