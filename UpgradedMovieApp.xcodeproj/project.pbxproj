@@ -161,7 +161,6 @@
 		E62A61C62A2B6C30002B2583 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				E6DC92AB2A45A69100C5138E /* Detail */,
 				E6F7C5DF2A3463F5003F4CEA /* Search */,
 				E6F7C5DD2A3463E4003F4CEA /* Home */,
 			);
@@ -176,7 +175,6 @@
 				E6F7C5D32A2E1DBE003F4CEA /* Color.swift */,
 				E6F7C5D92A2F6E4A003F4CEA /* View.swift */,
 				E62B62F52A3ED4F1008A5BD4 /* Codable.swift */,
-				E6DC92A92A45A15F00C5138E /* NavigationManager.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -188,14 +186,6 @@
 				E6FE74992A3CA17C005FAB16 /* ScrollableTabBarView.swift */,
 			);
 			path = Component;
-			sourceTree = "<group>";
-		};
-		E6DC92AB2A45A69100C5138E /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				E6DC92AC2A45A6A000C5138E /* DetailView.swift */,
-			);
-			path = Detail;
 			sourceTree = "<group>";
 		};
 		E6F7C5DD2A3463E4003F4CEA /* Home */ = {
@@ -346,7 +336,6 @@
 				E62B62FE2A3EF744008A5BD4 /* TopMovieModel.swift in Sources */,
 				E62B63062A3EF7BC008A5BD4 /* InTheaterModel.swift in Sources */,
 				E62B63122A3F0499008A5BD4 /* BoxOfficeView.swift in Sources */,
-				E6DC92AD2A45A6A000C5138E /* DetailView.swift in Sources */,
 				E62A61C22A2B6AF0002B2583 /* NetworkFactory.swift in Sources */,
 				E62A61AD2A2B69C0002B2583 /* UpgradedMovieAppApp.swift in Sources */,
 				E62B62F22A3EC3FA008A5BD4 /* PopularTVShowsView.swift in Sources */,
@@ -360,7 +349,6 @@
 				E62B63042A3EF79D008A5BD4 /* PopularTVShowsModel.swift in Sources */,
 				E6F7C5E32A3469E7003F4CEA /* SearchView.swift in Sources */,
 				E62A61CA2A2B6D7A002B2583 /* ConfigManager.swift in Sources */,
-				E6DC92AA2A45A15F00C5138E /* NavigationManager.swift in Sources */,
 				E6F7C5D22A2E1D65003F4CEA /* SplashScreenView.swift in Sources */,
 				E6F7C5D42A2E1DBE003F4CEA /* Color.swift in Sources */,
 			);
