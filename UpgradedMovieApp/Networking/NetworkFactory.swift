@@ -15,6 +15,7 @@ enum NetworkFactory {
     case getInTheaters
     case getComingSoon
     case getBoxOffice
+    case getDetail(id: String)
 }
 
 extension NetworkFactory {
@@ -36,6 +37,8 @@ extension NetworkFactory {
             return "/en/API/ComingSoon/k_9p5boe6v"
         case .getBoxOffice:
             return "/en/API/BoxOffice/k_9p5boe6v"
+        case .getDetail(let id):
+            return "/en/API/Title/k_9p5boe6v/" + id
         }
     }
     
@@ -92,6 +95,8 @@ extension NetworkFactory {
         case .getComingSoon:
             return .get
         case .getBoxOffice:
+            return .get
+        case .getDetail:
             return .get
         }
     }
