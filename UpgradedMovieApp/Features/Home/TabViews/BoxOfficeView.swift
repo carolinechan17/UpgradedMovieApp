@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BoxOfficeView: View {
+    @EnvironmentObject var navigationManager: NavigationManager
     @StateObject private var homeVM: HomeViewModel = HomeViewModel()
     let columns = [
         GridItem(.flexible()),
@@ -37,6 +38,9 @@ struct BoxOfficeView: View {
                         }
                         .frame(width: 110, height: 150)
                         .cornerRadius(10)
+                        .onTapGesture {
+                            navigationManager.navigateTo(destination: .detailView)
+                        }
                     }
                 }
                 .padding(.vertical)

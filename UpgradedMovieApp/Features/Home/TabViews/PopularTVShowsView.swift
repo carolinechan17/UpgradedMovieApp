@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PopularTVShowsView: View {
+    @EnvironmentObject var navigationManager: NavigationManager
     @StateObject private var homeVM: HomeViewModel = HomeViewModel()
     let columns = [
         GridItem(.flexible()),
@@ -37,6 +38,9 @@ struct PopularTVShowsView: View {
                         }
                         .frame(width: 110, height: 150)
                         .cornerRadius(10)
+                        .onTapGesture {
+                            navigationManager.navigateTo(destination: .detailView)
+                        }
                     }
                 }
                 .padding(.vertical)

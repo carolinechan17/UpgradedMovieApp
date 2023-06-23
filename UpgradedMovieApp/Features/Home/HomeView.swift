@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var navigationManager: NavigationManager
     @StateObject private var homeVM: HomeViewModel = HomeViewModel()
     @State var selectedIndex: Int = 0
     
@@ -58,6 +59,13 @@ struct HomeView: View {
             }
             .padding()
         }
+        .navigationDestination(for: Route.self, destination: { value in
+            switch value {
+            case .detailView:
+                DetailView()
+                    .environmentObject(navigationManager)
+            }
+        })
     }
 }
 
