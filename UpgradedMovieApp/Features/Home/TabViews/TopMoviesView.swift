@@ -21,7 +21,7 @@ struct TopMoviesView: View {
             Color(hex: "242A32")
                 .ignoresSafeArea()
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns) {
                     ForEach(homeVM.topMovies.items, id: \.self) { item in
                         ZStack {

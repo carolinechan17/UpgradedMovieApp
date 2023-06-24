@@ -21,7 +21,7 @@ struct InTheatersView: View {
             Color(hex: "242A32")
                 .ignoresSafeArea()
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns) {
                     ForEach(homeVM.inTheaters.items, id: \.self) { item in
                         ZStack {

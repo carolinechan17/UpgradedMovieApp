@@ -59,6 +59,7 @@ struct HomeView: View {
             }
             .padding()
         }
+        .ignoresSafeArea(.all, edges: .bottom)
         .navigationDestination(for: Route.self, destination: { value in
             switch value {
             case .detailView:
