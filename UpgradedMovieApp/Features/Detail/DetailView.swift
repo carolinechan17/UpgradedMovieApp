@@ -24,6 +24,26 @@ struct DetailView: View {
                 .ignoresSafeArea()
             
             VStack {
+                HStack {
+                    Image(systemName: "arrow.left")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.white)
+                        .onTapGesture {
+                            navigationManager.backToPrevious()
+                        }
+                    Spacer()
+                    Text(detailVM.detail.title)
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(.white)
+                    Spacer()
+                }
+                
+                Rectangle()
+                    .frame(width: .infinity, height: 1)
+                    .foregroundColor(Color(hex: "92929D"))
+                    .padding(.vertical)
+                
                 header
                 
                 TabBarView(tabs: [.init(title: "About Movie"), .init(title: "Cast"), .init(title: "Similar")], geoWidth: 360, selectedTab: $selectedIndex)
@@ -52,6 +72,7 @@ struct DetailView: View {
             .ignoresSafeArea(.all, edges: .bottom)
             .padding()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
