@@ -39,7 +39,7 @@ struct PopularMoviesView: View {
                         .frame(width: 110, height: 150)
                         .cornerRadius(10)
                         .onTapGesture {
-                            navigationManager.navigateTo(destination: .detailView)
+                            navigationManager.navigateTo(destination: .detailView(id: item.id))
                         }
                     }
                 }

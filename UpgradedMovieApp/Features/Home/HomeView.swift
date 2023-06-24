@@ -62,8 +62,8 @@ struct HomeView: View {
         .ignoresSafeArea(.all, edges: .bottom)
         .navigationDestination(for: Route.self, destination: { value in
             switch value {
-            case .detailView:
-                DetailView()
+            case .detailView(let id):
+                DetailView(id: id)
                     .environmentObject(navigationManager)
             }
         })

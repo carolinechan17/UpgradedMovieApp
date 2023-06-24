@@ -11,6 +11,7 @@ struct DetailView: View {
     @EnvironmentObject var navigationManager: NavigationManager
     @StateObject var detailVM: DetailViewModel = DetailViewModel()
     @State var selectedIndex: Int = 0
+    var id: String
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -47,12 +48,15 @@ struct DetailView: View {
             .ignoresSafeArea(.all, edges: .bottom)
             .padding()
         }
+        .task {
+            await detailVM.getDetail(id: id)
+        }
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(id: "tt1375666")
     }
 }
 

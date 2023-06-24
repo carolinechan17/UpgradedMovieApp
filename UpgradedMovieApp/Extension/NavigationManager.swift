@@ -27,5 +27,5 @@ class NavigationManager: ObservableObject {
 }
 
 enum Route: Hashable {
-    case detailView
+    case detailView(id: String)
 }
