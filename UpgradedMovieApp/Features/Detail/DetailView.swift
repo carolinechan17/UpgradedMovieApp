@@ -12,6 +12,7 @@ struct DetailView: View {
     @StateObject var detailVM: DetailViewModel = DetailViewModel()
     @State var selectedIndex: Int = 0
     var id: String
+    @State var keywordList: [String] = []
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -45,11 +46,11 @@ struct DetailView: View {
                 
                 Spacer()
             }
+            .task {
+                await detailVM.getDetail(id: id)
+            }
             .ignoresSafeArea(.all, edges: .bottom)
             .padding()
-        }
-        .task {
-            await detailVM.getDetail(id: id)
         }
     }
 }
@@ -65,9 +66,20 @@ extension DetailView {
     var header: some View {
         HStack {
             ZStack {
-                Image("movie")
-                    .resizable()
-                    .frame(width: 120, height: 150)
+                ZStack {
+                    ProgressView()
+                    
+                    AsyncImage(url: URL(string: detailVM.detail.image)) { image in
+                        image
+                            .resizable()
+                            .frame(width: 120, height: 150)
+                            .scaledToFit()
+                    } placeholder: {
+                        ProgressView()
+                    }
+                }
+                .frame(width: 120, height: 150)
+                .background(Color.gray)
                 .cornerRadius(10)
                 
                 VStack {
@@ -78,7 +90,7 @@ extension DetailView {
                             .resizable()
                             .frame(width: 14, height: 14)
                             .foregroundColor(.yellow)
-                        Text("4.5")
+                        Text(detailVM.detail.imDBRating)
                             .font(.system(size: 14))
                             .fontWeight(.semibold)
                             .foregroundColor(.yellow)
@@ -89,7 +101,7 @@ extension DetailView {
             .frame(width: 120, height: 150)
             
             VStack(alignment: .leading) {
-                Text("Spiderman No Way Home")
+                Text(detailVM.detail.title)
                     .font(.system(size: 18))
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -99,7 +111,7 @@ extension DetailView {
                     Image(systemName: "calendar")
                         .foregroundColor(Color(hex: "92929D"))
                     
-                    Text("24 June 2023")
+                    Text(detailVM.dateFormatter(date: detailVM.detail.releaseDate))
                         .font(.system(size: 14))
                         .fontWeight(.medium)
                         .foregroundColor(Color(hex: "92929D"))
@@ -110,7 +122,7 @@ extension DetailView {
                     Image(systemName: "clock")
                         .foregroundColor(Color(hex: "92929D"))
                     
-                    Text("2hr 30 mins")
+                    Text(detailVM.detail.runtimeStr)
                         .font(.system(size: 14))
                         .fontWeight(.medium)
                         .foregroundColor(Color(hex: "92929D"))
@@ -121,7 +133,7 @@ extension DetailView {
                     Image(systemName: "popcorn")
                         .foregroundColor(Color(hex: "92929D"))
                     
-                    Text("Action, Adventure, Sci-fi")
+                    Text(detailVM.detail.genres)
                         .font(.system(size: 14))
                         .fontWeight(.medium)
                         .foregroundColor(Color(hex: "92929D"))
@@ -154,7 +166,7 @@ extension DetailView {
                 }
                 .padding(.bottom, 3)
                 
-                Text("A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.")
+                Text(detailVM.detail.plot)
                     .font(.system(size: 14))
                     .fontWeight(.regular)
                     .foregroundColor(.white)
@@ -171,7 +183,7 @@ extension DetailView {
                 .padding(.top, 6)
                 .padding(.bottom, 3)
                 
-                TagView(tags: ["dream", "ambiguous ending", "subconscious", "mindbender", "surprise ending"])
+                TagView(tags: detailVM.detail.keywordList)
                 
                 Spacer()
             }
@@ -188,8 +200,8 @@ extension DetailView {
             
             ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns) {
-                    ForEach(0..<12, id: \.self) { _ in
-                        CastView()
+                    ForEach(detailVM.detail.actorList, id: \.self) { item in
+                        CastView(image: item.image, name: item.name, character: item.asCharacter)
                     }
                 }
             }
@@ -204,16 +216,29 @@ extension DetailView {
             Color(hex: "242A32")
                 .ignoresSafeArea()
             
-            ScrollView(.horizontal) {
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
-                    ForEach(0..<10, id: \.self) { _ in
+                    ForEach(detailVM.detail.similars, id: \.self) { item in
                         VStack {
-                            Image("movie")
-                                .resizable()
-                                .frame(width: 120, height: 150)
+                            ZStack {
+                                ProgressView()
+                                
+                                AsyncImage(url: URL(string: item.image)) { image in
+                                    image
+                                        .resizable()
+                                        .frame(width: 120, height: 150)
+                                        .scaledToFit()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                            }
+                            .frame(width: 120, height: 150)
+                            .background(Color.gray)
                             .cornerRadius(10)
                             
-                            Text("Interstellar")
+                            Text(item.title)
+                                .frame(width: 120, height: .infinity)
+                                .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
                                 .font(.system(size: 16))
                                 .fontWeight(.medium)

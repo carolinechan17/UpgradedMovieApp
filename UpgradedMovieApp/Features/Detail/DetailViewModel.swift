@@ -22,4 +22,13 @@ class DetailViewModel: ObservableObject {
         guard let data = try? await detailServices.getDetail(endPoint: .getDetail(id: id)) else { return }
         detail = data
     }
+    
+    func dateFormatter(date: String) -> String {
+        let stringToDate = DateFormatter()
+        stringToDate.dateFormat = "yy-MM-dd"
+        
+        let dateToString = DateFormatter()
+        dateToString.dateFormat = "d MMM y"
+        return dateToString.string(from: stringToDate.date(from: date) ?? Date())
+    }
 }
