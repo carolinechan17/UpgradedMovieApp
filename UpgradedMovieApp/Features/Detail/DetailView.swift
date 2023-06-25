@@ -12,6 +12,7 @@ struct DetailView: View {
     @StateObject var detailVM: DetailViewModel = DetailViewModel()
     @State var selectedIndex: Int = 0
     var id: String
+    let itemPerRow: CGFloat = 2
     @State var keywordList: [String] = []
     let columns = [
         GridItem(.flexible()),
@@ -42,7 +43,7 @@ struct DetailView: View {
                 Rectangle()
                     .frame(width: .infinity, height: 1)
                     .foregroundColor(Color(hex: "92929D"))
-                    .padding(.vertical)
+                    .padding(.vertical, 3)
                 
                 header
                 
@@ -204,11 +205,32 @@ extension DetailView {
                 .padding(.top, 6)
                 .padding(.bottom, 3)
                 
-                TagView(tags: detailVM.detail.keywordList)
+                ForEach(0..<detailVM.detail.keywordList.count, id: \.self) { index in
+                    if index % Int(itemPerRow) == 0 {
+                        buildView(rowIndex: index)
+                    }
+                }
                 
                 Spacer()
             }
         }
+    }
+}
+
+extension DetailView {
+    func buildView(rowIndex: Int) -> TagView? {
+        var rowData = [String]()
+        for itemIndex in 0..<Int(itemPerRow) {
+            if rowIndex + itemIndex < detailVM.detail.keywordList.count {
+                rowData.append(detailVM.detail.keywordList[rowIndex + itemIndex])
+            }
+        }
+        
+        if !rowData.isEmpty {
+            return TagView(tags: rowData)
+        }
+        
+        return nil
     }
 }
 
@@ -265,6 +287,9 @@ extension DetailView {
                                 .fontWeight(.medium)
                             
                             Spacer()
+                        }
+                        .onTapGesture {
+                            navigationManager.navigateTo(destination: .detailView(id: item.id))
                         }
                     }
                 }
