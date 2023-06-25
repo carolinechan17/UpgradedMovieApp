@@ -24,9 +24,9 @@ struct HomeView: View {
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
                 
-                SearchBarView(query: query)
-                    .onSubmit {
-                        navigationManager.navigateTo(destination: .searchView(query: query))
+                SearchBarView()
+                    .onTapGesture {
+                        navigationManager.navigateTo(destination: .searchView)
                     }
                 
                 ScrollableTabBarView(items: ["Top Movies", "Top TV Shows", "Popular Movies", "Popular TV Shows", "Now Playing", "Coming Soon", "Box Office"], selectedIndex: $selectedIndex)
@@ -69,8 +69,8 @@ struct HomeView: View {
             case .detailView(let id):
                 DetailView(id: id)
                     .environmentObject(navigationManager)
-            case .searchView(let query):
-                SearchView(query: query)
+            case .searchView:
+                SearchView()
                     .environmentObject(navigationManager)
             }
         })
