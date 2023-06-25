@@ -16,7 +16,7 @@ struct SearchView: View {
                 .ignoresSafeArea()
             
             VStack() {
-                SearchBarView(query: query)
+                SearchBarView(query: $query)
                     .onSubmit {
                         Task {
                             await searchVM.searchByQuery(query: query)
@@ -54,7 +54,7 @@ struct SearchView: View {
                                 .background(Color.gray)
                                 .cornerRadius(10)
                                 
-                                VStack {
+                                VStack(alignment: .leading) {
                                     Text(item.title)
                                         .font(.system(size: 18))
                                         .fontWeight(.semibold)
@@ -70,6 +70,7 @@ struct SearchView: View {
                                 
                                 Spacer()
                             }
+                            .padding(.top)
                         }
                     }
                 }

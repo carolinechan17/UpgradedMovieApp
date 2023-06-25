@@ -11,6 +11,7 @@ import SwiftUI
 @MainActor
 class SearchViewModel: ObservableObject {
     @Published var result: SearchModel = SearchModel()
+    @Published var isLoading: Bool = false
     
     private var searchServices: SearchServicesProtocol
     
@@ -19,7 +20,9 @@ class SearchViewModel: ObservableObject {
     }
     
     func searchByQuery(query: String) async {
+        isLoading = true
         guard let data = try? await searchServices.search(endPoint: .search(query: query)) else { return }
         result = data
+        isLoading = false
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchBarView: View {
-    @State var query: String = ""
+    @Binding var query: String
     var body: some View {
         ZStack {
             Color(hex: "3A3F47")
@@ -28,12 +28,5 @@ struct SearchBarView: View {
         }
         .frame(width: .infinity, height: 45)
         .cornerRadius(10)
-    }
-}
-
-struct SearchBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchBarView()
-            .padding()
     }
 }

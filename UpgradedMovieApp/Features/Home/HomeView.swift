@@ -24,7 +24,7 @@ struct HomeView: View {
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
                 
-                SearchBarView()
+                SearchBarView(query: $query)
                     .onTapGesture {
                         navigationManager.navigateTo(destination: .searchView)
                     }
