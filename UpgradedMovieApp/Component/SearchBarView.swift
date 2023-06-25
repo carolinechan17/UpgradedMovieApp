@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct SearchBarView: View {
-    @State var movieName: String = ""
+    @State var query: String = ""
     var body: some View {
         ZStack {
             Color(hex: "3A3F47")
             
             HStack {
-                TextField("", text: $movieName)
-                    .placeholder(when: movieName.isEmpty) {
+                TextField("", text: $query)
+                    .foregroundColor(.white)
+                    .placeholder(when: query.isEmpty) {
                         Text("Search")
                             .foregroundColor(Color(hex: "67686D"))
                             .font(.system(size: 14))

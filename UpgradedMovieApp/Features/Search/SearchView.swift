@@ -8,26 +8,25 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State var query: String
     var body: some View {
         ZStack {
             Color(hex: "242A32")
                 .ignoresSafeArea()
             
             VStack(alignment: .leading) {
-                Text("What do you want to watch?")
-                    .font(.system(size: 18))
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                
                 SearchBarView()
+                
+                Spacer()
             }
             .padding()
         }
+        .navigationBarBackButtonHidden()
     }
 }
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(query: "mermaid")
     }
 }

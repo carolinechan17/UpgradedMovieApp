@@ -11,6 +11,7 @@ struct HomeView: View {
     @EnvironmentObject var navigationManager: NavigationManager
     @StateObject private var homeVM: HomeViewModel = HomeViewModel()
     @State var selectedIndex: Int = 0
+    @State var query: String = ""
     
     var body: some View {
         ZStack {
@@ -23,7 +24,10 @@ struct HomeView: View {
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
                 
-                SearchBarView()
+                SearchBarView(query: query)
+                    .onSubmit {
+                        navigationManager.navigateTo(destination: .searchView(query: query))
+                    }
                 
                 ScrollableTabBarView(items: ["Top Movies", "Top TV Shows", "Popular Movies", "Popular TV Shows", "Now Playing", "Coming Soon", "Box Office"], selectedIndex: $selectedIndex)
                     .padding(.top)
@@ -64,6 +68,9 @@ struct HomeView: View {
             switch value {
             case .detailView(let id):
                 DetailView(id: id)
+                    .environmentObject(navigationManager)
+            case .searchView(let query):
+                SearchView(query: query)
                     .environmentObject(navigationManager)
             }
         })
