@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
+    @EnvironmentObject var navigationManager: NavigationManager 
     @StateObject var searchVM: SearchViewModel = SearchViewModel()
     @State var query: String = ""
     var body: some View {
@@ -16,6 +17,26 @@ struct SearchView: View {
                 .ignoresSafeArea()
             
             VStack() {
+                HStack {
+                    Image(systemName: "arrow.left")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.white)
+                        .onTapGesture {
+                            navigationManager.backToPrevious()
+                        }
+                    Spacer()
+                    Text("Search")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(.white)
+                    Spacer()
+                }
+                
+                Rectangle()
+                    .frame(width: .infinity, height: 1)
+                    .foregroundColor(Color(hex: "92929D"))
+                    .padding(.vertical, 3)
+                
                 SearchBarView(query: $query)
                     .onSubmit {
                         Task {
@@ -24,16 +45,21 @@ struct SearchView: View {
                     }
                 
                 if searchVM.result.results.isEmpty {
-                    Spacer()
-                    Image("EmptySearch")
-                    Text("We Are Sorry, \nWe Can Not Find The Movie :(")
-                        .foregroundColor(.white)
-                        .font(.system(size: 18, weight: .semibold))
-                        .multilineTextAlignment(.center)
-                    Text("Find your movie by \ntyping the title")
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 14, weight: .regular))
-                        .multilineTextAlignment(.center)
+                    if searchVM.isLoading {
+                        Spacer()
+                        ProgressView()
+                    } else {
+                        Spacer()
+                        Image("EmptySearch")
+                        Text(searchVM.isNewlyOpen ? "Search your movie here" : "We Are Sorry, \nWe Can Not Find The Movie :(")
+                            .foregroundColor(.white)
+                            .font(.system(size: 18, weight: .semibold))
+                            .multilineTextAlignment(.center)
+                        Text("Find your movie by \ntyping the title")
+                            .foregroundColor(Color.white)
+                            .font(.system(size: 14, weight: .regular))
+                            .multilineTextAlignment(.center)
+                    }
                 } else {
                     ScrollView(showsIndicators: false) {
                         ForEach(searchVM.result.results, id: \.self) { item in
@@ -69,6 +95,9 @@ struct SearchView: View {
                                 }
                                 
                                 Spacer()
+                            }
+                            .onTapGesture {
+                                navigationManager.navigateTo(destination: .detailView(id: item.id))
                             }
                             .padding(.top)
                         }
